@@ -5,8 +5,8 @@
  */
 
 import React from 'react';
-// import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Tag from 'components/Tag';
 
 const ImageBackground = styled.div`
   background-image:url(https://www.reed.co.uk/courses/resources/responsive/images/home/homepage-hero.jpg);
@@ -23,7 +23,7 @@ const ImageBackground = styled.div`
 `;
 
 const DropbackBackground = styled.div`
-  background: linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgb(0, 77, 102) 100%);
+  background: linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(0, 0, 0, 0.86) 100%);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -31,9 +31,15 @@ const DropbackBackground = styled.div`
   right: 0;
 `;
 
+const tags = [
+  'English',
+  'Programming',
+  'Cookery',
+];
+
 function HomeHero() {
   return (
-    <div className="bg-gray-300 py-32 px-6 relative xl:py-40">
+    <div className="bg-gray-300 pb-10 pt-32 px-6 relative md:pb-20 xl:pt-40 xl:pb-24">
       <div className="container z-20 relative flex flex-col">
         <div className="max-w-lg w-full">
           <h1 className="text-3xl md:text-3xl lg:text-4xl xl:text-5xl leading-snug text-white font-semibold">Find your course. <br />Change your life.</h1>
@@ -48,6 +54,13 @@ function HomeHero() {
               </div>
             </div>
           </div>
+          <ul className="flex flex-row mt-4 flex-wrap ">
+            {
+              tags.map((title, key) => (
+                <Tag as="li" key={key} title={title} popular={key === 0} />
+              ))
+            }
+          </ul>
         </div>
       </div>
       <ImageBackground className="z-10" />

@@ -9,15 +9,14 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import HomeHero from 'components/HomeHero';
+import SectionHowDoesItWork from 'components/SectionHowDoesItWork';
 import messages from './messages';
 
 export default function HomePage() {
   return (
     <div>
       <HomeHero />
-      <h1>
-        <FormattedMessage {...messages.header} />
-      </h1>
+      <SectionHowDoesItWork />
     </div>
   );
 }
