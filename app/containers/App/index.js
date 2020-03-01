@@ -13,6 +13,8 @@ import { Switch, Route } from 'react-router-dom';
 import Navigation from 'components/Navigation';
 
 import HomePage from 'containers/HomePage/Loadable';
+import BrowsePage from 'containers/BrowsePage/Loadable';
+import AdvisorPage from 'containers/AdvisorPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 export default function App() {
@@ -21,6 +23,8 @@ export default function App() {
       <Navigation />
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/courses" component={BrowsePage} />
+        <Route exact path="/advisors" component={AdvisorPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>

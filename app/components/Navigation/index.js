@@ -5,34 +5,42 @@
  */
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
+import { SearchBoxSmall } from 'components/SearchBox';
 
 function Navigation() {
   return (
-    <div className="p-3 md:py-3 shadow fixed z-30 w-full bg-white">
+    <div className="p-2 md:py-2 shadow-sm fixed z-30 w-full bg-white">
       <nav className="flex justify-between container">
         <div className="flex items-center flex-auto">
-          <a className="text-gray-700 text-md hover:text-gray-800" href="#">
+          <Link to="/" className="text-gray-700 text-md hover:text-gray-800">
             <img src="https://studee.com/logos/studee.svg" className="w-24" />
-          </a>
+          </Link>
+          <div className="flex-1 mx-6">
+            {/* <SearchBoxSmall /> */}
+          </div>
         </div>
         <div className="flex">
           <ul className="hidden lg:flex items-center text-sm">
             <li className="mr-6">
-              <a className="text-gray-700 hover:text-gray-800" href="#">Courses</a>
+              <Link className="text-gray-700 hover:text-gray-800" to="/courses" title="All courses">Courses</Link>
             </li>
             <li className="mr-6">
-              <a className="text-gray-700 hover:text-gray-800" href="#">Career advice</a>
+              <Link className="text-gray-700 hover:text-gray-800" to="/advisors">Advices</Link>
             </li>
             <li className="mr-6">
-              <a className="text-gray-700 hover:text-gray-800" href="#">Join / Login</a>
+              <Link className="text-gray-700 hover:text-gray-800" to="/advisors">Stories</Link>
+            </li>
+            <li className="mr-6">
+              <a className="text-gray-700 hover:text-gray-800" href="#">Help</a>
             </li>
           </ul>
           <ul className="flex items-center">
             <li>
-              <button className="bg-pink-500 hover:bg-pink-800 text-white text-sm font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-500 flex items-center">
-                Compare (2)
+              <button className="bg-blue-500 hover:bg-blue-800 text-white text-sm font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-500 flex items-center">
+                Join
               </button>
             </li>
             {/* <li className="ml-4 block md:hidden">
